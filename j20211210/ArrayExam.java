@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class ArrayExam {
     public static void main(String[] args) {
         
@@ -5,6 +7,6 @@ public class ArrayExam {
 
         int[] number = {1,2,3,4,5}; // 5개로 설정
 
-        System.out.println(number[]);
+        System.out.println(number[2]);
     }
 }
