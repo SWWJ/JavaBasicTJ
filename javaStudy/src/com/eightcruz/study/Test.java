@@ -3,7 +3,7 @@ package com.eightcruz.study;
 public class Test {
 
 	public void sayNick(String nick) throws FoolException {
-		// 메소드 뒤에. 예외를 호출한 곳으로  이동시킴
+		// 메소드 뒤에 예외를 호출한 곳으로  이동시킴
 			if ("fool".equals(nick)) {
 				throw new FoolException();
 				// throw new 에러 타입 자료형 명 -> 예외가 아닌데 강제로 예외를 발생시킴
