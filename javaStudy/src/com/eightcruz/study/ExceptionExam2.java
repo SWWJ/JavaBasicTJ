@@ -44,12 +44,13 @@ public class ExceptionExam2 {
 
 	}
 	
-	public static int divide(int i, int j) throws Eexception {
+	public static int divide(int i, int j) {
 
-		if (j == 0) {
+	try {
 			int k = i/j; // 에러 발생 지점
 			return k;
-			throw new Eexception();
+		} catch(Exception e) {
+			return 1;
 		}
 
 	
