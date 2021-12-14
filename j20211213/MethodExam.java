@@ -1,3 +1,5 @@
+package j20211213;
+
 public class MethodExam {
 
     // 1. 입력(input)과 출력(output)이 모두 있는 method (***)

@@ -1,3 +1,5 @@
+package j20211213;
+
 public class CalExam2 {
     static int result = 0;
 

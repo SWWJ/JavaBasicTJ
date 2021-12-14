@@ -1,3 +1,5 @@
+package j20211213;
+
 public class VariableExam { // class도 하나의 자료형으로 사용된다. class로 찍어낸 객체 유형만 적용할 수 있다.
     /* 변수의 영향 범위
     
@@ -20,6 +22,6 @@ public class VariableExam { // class도 하나의 자료형으로 사용된다. 
         testVar.varTest(testVar);
         System.out.println(testVar.a); // 위와 아래의 변수가 완전히 다른 것? 
 
-        /// 1. 메서드 안에서 선언된 변수는 그 메서드 안에서만 사용이 된다. (지역변수)
+        /// 메서드 안에서 선언된 변수는 그 메서드 안에서만 사용이 된다. (지역변수)
     }
 }

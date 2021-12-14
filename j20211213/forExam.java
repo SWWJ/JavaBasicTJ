@@ -1,3 +1,5 @@
+package j20211213;
+
 import java.util.Scanner;
 
 public class forExam {
