@@ -1,6 +1,6 @@
 package com.eightcruz.study;
 
-public class Duck extends bIRD {
+public class Duck extends biRD {
 
 	@Override
 	public void sing() {
