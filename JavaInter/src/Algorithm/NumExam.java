@@ -2,37 +2,38 @@ package Algorithm;
 
 public class NumExam {
 
-	static int[] arr = { 2, 4, 6, 8, 9, 14, 17 };
+//	static int[] arr = { 2, 4, 6, 8, 9, 14, 17 }; // 두 method 모두에서 사용할 수 있도록 static 변수 사용
 
-	static int binarySearch(int key, int head, int tail) {
+//	static int binarySearch(int key, int head, int tail) { // method - 각 변수를 설정함
 
-		int center;
+//		int center;
 
-		while (head <= tail) {
-			center = (head + tail) / 2;
+	//	while (head <= tail) {
+//			center = (head + tail) / 2;
 
-			if (key == arr[center]) {
-				return center; // 메서드로 처리
-			} else if (key < arr[center]) {
-				tail = center - 1;
-			} else {
-				head = center + 1;
-			}
-		}
+//			if (key == arr[center]) {
+//				return center; // 메서드로 처리
+//			} else if (key < arr[center]) {
+//				tail = center - 1;
+//			} else {
+//				head = center + 1;
+//			}
+//		}
 
-		return -1;
-	}
+//	return-1;
 
-	public static void main(String[] args) {
-		
+//	}
+
+//	public static void main(String[] args) {
+
 		// return한 값 = a
-		int a = binarySearch(17, 0, arr.length - 1); // return한 것이 center기 때문에.
-		if (a == -1) {// 찾을 값(key), head, tail(array의 갯수(index와 일치)) -> 메서드 호출
-			System.out.println("찾지 못했습니다.");
-		} else {
-			System.out.println(a + "번째 요소와 일치합니다.");
-		}
-		
+//		int a = binarySearch(17, 0, arr.length - 1); // return한 것이 center기 때문에.
+//		if (a == -1) {// 찾을 값(key), head, tail(array의 갯수(index와 일치)) -> 메서드 호출
+//			System.out.println("찾지 못했습니다.");
+//		} else {
+//			System.out.println(a + "번째 요소와 일치합니다.");
+//		}
+
 //		Scanner sc = new Scanner(System.in);
 //		
 //		System.out.print("a를 입력하세요 > "); double a = sc.nextDouble();
