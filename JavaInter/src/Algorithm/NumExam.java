@@ -1,11 +1,38 @@
-package variableExam;
-
-import java.util.ArrayList;
+package Algorithm;
 
 public class NumExam {
 
-	public static void main(String[] args) {
+	static int[] arr = { 2, 4, 6, 8, 9, 14, 17 };
 
+	static int binarySearch(int key, int head, int tail) {
+
+		int center;
+
+		while (head <= tail) {
+			center = (head + tail) / 2;
+
+			if (key == arr[center]) {
+				return center; // 메서드로 처리
+			} else if (key < arr[center]) {
+				tail = center - 1;
+			} else {
+				head = center + 1;
+			}
+		}
+
+		return -1;
+	}
+
+	public static void main(String[] args) {
+		
+		// return한 값 = a
+		int a = binarySearch(17, 0, arr.length - 1); // return한 것이 center기 때문에.
+		if (a == -1) {// 찾을 값(key), head, tail(array의 갯수(index와 일치)) -> 메서드 호출
+			System.out.println("찾지 못했습니다.");
+		} else {
+			System.out.println(a + "번째 요소와 일치합니다.");
+		}
+		
 //		Scanner sc = new Scanner(System.in);
 //		
 //		System.out.print("a를 입력하세요 > "); double a = sc.nextDouble();
@@ -50,7 +77,7 @@ public class NumExam {
 //				max = arr[i];
 //			}
 //		}
-		
+
 //		int[] arr = { 54, 65, 44, 5, 12 };
 //
 //		
@@ -63,9 +90,6 @@ public class NumExam {
 //			}
 //		}
 
-
-
-
 //		while (i < arr.length) { // i가 array의 길이(5)보다 작아야 한다
 //			if (max < arr[i]) {  // arr[i번째]가 초기 설정한 max보다 크면 그 값을 max에 대입
 //				max = arr[i];
@@ -74,7 +98,5 @@ public class NumExam {
 //		}
 //
 //		System.out.println(max);
-
 	}
-
 }
