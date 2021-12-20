@@ -46,22 +46,67 @@ public class DowhlieExam {
 
 		// 3 짝. 36 짝짝 99 짝짝. 한 글자씩!
 
-		int num = 1;
+//		for (int i = 1; i <= 100; i++) {
+//			System.out.println(i);
+//
+//			int tmp = i;
+//
+//			do {
+//				if (tmp % 10 % 3 == 0 && tmp % 10 != 0) {
+//					System.out.print("짝");
+//				}
+//
+//			} while ((tmp /= 10) != 0);
+//			// tmp = tmp / 10
+//			System.out.println();
+//		}
 
-		do {
-			if (num % 3 == 0) {
-				System.out.print("짝");
-			} else {
-				System.out.println(num);
-			}
-			for (num = 1; num <= 100; num++) {
-				if (num % 10 % 3 == 0) {
-				} else {
-					System.out.println(num);
-				}
-			}
-			num++;
-		} while (num <= 100);
+		// break
+
+//		int sum = 0;
+//		int i = 0;
+//
+//		while (true) {
+//			if (sum > 100) {
+//				break;
+//			}
+//			++i;
+//			sum += i;
+//			// sum = sum + i
+//			// System.out.println("i = " + i + "\tsum = " + sum);
+//		}
+//		System.out.println("i = " + i);
+//		System.out.println("sum = " + sum);
+
+		// 3의 배수만 출력하시오 for continue
+
+//		for(int i = 1; i <= 100; i++) {
+//			if(i % 3 != 0) {
+//				continue;
+//			} System.out.println(i);
+//		}
+
+		// 이름 붙은 반복문
+
+//		break문 근접한 단 하나의 반복문만 벗어날 수 있다. 여러 개의 반복문이 중첩된 경우 break만으로는 완전히 벗어날 수 없다.
+
+//		loop :
+//		while() {
+//			
+//			while() {
+//				
+//				break loop;
+//			}
+//		}
+
+//		loop: for (int i = 2; i <= 9; i++) {
+//			for (int j = 1; j <= 9; j++) {
+//				if (j == 5)
+//					break loop;
+//				System.out.println(i + "*" + j + "=" + i * j);
+//			}
+//			System.out.println();
+//		}
 
 	}
 
