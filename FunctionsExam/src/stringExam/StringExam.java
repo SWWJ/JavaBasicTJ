@@ -1,5 +1,7 @@
 package stringExam;
 
+import java.util.StringJoiner;
+
 public class StringExam {
 
 	public static void main(String[] args) {
@@ -29,10 +31,7 @@ String 클래스는 문자열을 다루는 데 필요한 메서드들을 함께 
 	char c = ''; (X) ' '; 는 허용. char형 변수에는 반드시 하나의 문자를 지정해야 한다.
 	
 ==== String의 생성자와 메서드 ====
-
-
 */
-		
 		char[] cArr = new char[0];
 		String s = new String(cArr); //== String s = new String("");
 		
@@ -82,7 +81,127 @@ String 클래스는 문자열을 다루는 데 필요한 메서드들을 함께 
 		boolean bc = ab.endsWith("txt");
 		
 		System.out.println(bc);
+		
+		// startsWith() 지정된 문자열로 시작하는지 검사. boolean(true, false)
+		System.out.println(ab.startsWith("He"));
+		
 
+		// equalsIgnoreCase() 대소문자 구별 없이 내용이 같은지 비교 boolean(true, false)
+		String r = "Hello";
+		System.out.println(r.equalsIgnoreCase("hello"));
+		
+		// indexOf() 주어진 문자가 문자열에 존재하는지 확인, 없으면 -1, 있으면 인덱스 출력, 여러 개면 맨 앞의 것의 인덱스 출력
+		System.out.println(r.indexOf('l'));
+		
+		// lastIndexOf() 지정된 문자가 오른쪽부터 찾아서 index를 알려준다. 없으면 -1, 세는 것만 오른쪽부터이고 인덱스는 똑같이 알려줌
+		System.out.println(r.lastIndexOf('o'));
+		
+		// length() 문자열의 개수 길이를 리턴한다.
+		System.out.println(r.length());
+		
+		// replace() 글자(한 글자, char)를 바꿔서 보여준다. (문자열은 immutable)
+		System.out.println(r.replace('e', 'o')); // replace('기존 글자', '바꿀 글자') -> 실제 String이 바뀐 것은 아니다.
+		
+		// replaceAll() 문자열을 바꿔서 보여준다. (문자열은 immutable)
+		System.out.println(r.replaceAll("ll", "ad"));
+		
+		// split() 문자열을 지정된 분리자로 나누어 배열로 반환
+		String animals = "dog cat bear";
+		String[] arr = animals.split(" ");
+		
+		// for 구문
+		for(int j = 0; j < arr.length; j++) {
+			System.out.print(arr[j]);
+			
+			if(j != arr.length - 1) {
+				System.out.print(", ");
+			}
+		}
+		
+		System.out.println();
+		
+		System.out.print("[");
+		for(int j = 0; j < arr.length - 1; j++) {
+			System.out.print(arr[j] + ", ");		
+		}
+		
+		System.out.println(arr[arr.length - 1] + "]"); // 마지막 거만 따로
+		
+		System.out.println();
+		
+		// for each 구문
+		for(String item: arr) {
+			System.out.print(item);
+		}
+		
+		// substring() 문자열(여러 글자) 잘라내기
+		System.out.println(r.substring(2, 4)); // substring(begin index, end index(미만))
+		
+		// toLowerCase() 전부 소문자로 보여주기
+		System.out.println(r.toLowerCase());
+		
+		// toUpperCase() 전부 대문자로 보여주기
+		System.out.println(r.toUpperCase());
+		
+		System.out.println(r); // 여전히 String r은 바뀌지 않고 그대로이다.
+		
+		// trim() 문자열 앞뒤에 있는 불필요한 여백을 제거
+		String rr = "       Hello      ";
+		System.out.println(rr.trim());
+		
+		// join() 문자열들을 결합한다. split()과 반대
+		String animal = "dog,car,bear";
+		String[] arr1 = animal.split(","); 
+		
+		System.out.println(String.join(", ", arr1)); // -를 기준으로 arr1의 항목들을 붙여라
+		// 항목1" "항목2" "항목3 -> for문 쓰지 않고도 배열 출력
+		
+		System.out.println();
+
+		// import java.util.StringJoiner; 필요
+		StringJoiner sj = new StringJoiner(", ", "[", "]"); // 객체생성("중간마다", "처음 시작", "끝")
+		for (String ani: arr1) {  // for each
+			sj.add(ani);          // 생성한 StringJoiner 객체.add(for each String 객체)
+			System.out.println(sj.toString());
+		}
+		
+		// Integer.parseInt(), Integer.valueOf() : String을 기본형 값으로 변환
+		int ii = Integer.parseInt("100");
+		int jj = Integer.valueOf("100");
+		
+		int iVal = 100;
+		String strVal = String.valueOf(iVal); // int를 String으로 변환
+		
+		double dVal = 200.0;
+		String strVal2 = dVal + ""; // 숫자를 문자열로 바꾸는 또 다른 방법
+		
+		double sum = Integer.parseInt(strVal) + Double.parseDouble(strVal2);
+		double sum2 = Integer.valueOf(strVal) + Double.valueOf(strVal2);
+		
+		System.out.println(sum);
+		System.out.println(sum2);
+		
+//		int val = Integer.parseInt(" 123 "); // 공백이 있을 시 int로 바뀌지 않고 에러 발생
+		int val = Integer.parseInt(" 123 ".trim());
+		System.out.println(val);
+		
+		// 문자열을 숫자로 변환하는 과정에서는 예외가 발생할 확률이 아주 높기 때문에 주의를 기울여야 한다.
+		
+		System.out.println();
+		
+		// 
+		String fullName = "Hello.java";
+		
+		// 확장자를 제외한 이름, 확장자는?
+		String[] ar = fullName.split("\\.");
+
+		System.out.println("확장자를 제외한 이름은 " + ar[0]);
+		System.out.println("확장자는 " + ar[1]);
+		
+		int co = fullName.indexOf('.');
+		System.out.println("확장자를 제외한 이름은 " + fullName.substring(0, co));
+		System.out.println("확장자는 " + fullName.substring(co + 1, fullName.length())); // 끝까지
+		
 	}
 
 }
